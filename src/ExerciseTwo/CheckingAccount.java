@@ -1,4 +1,4 @@
-package ExercicioDois;
+package ExerciseTwo;
 
 public class CheckingAccount {
   private String accountNumber;

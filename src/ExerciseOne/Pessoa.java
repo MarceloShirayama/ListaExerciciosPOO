@@ -2,7 +2,7 @@
 // altura. Crie os métodos públicos necessários para getters e setters e também um método para imprimir
 // todos dados de uma pessoa. Crie um método para calcular a idade da pessoa.
 
-package ExercicioUm;
+package ExerciseOne;
 
 import java.time.LocalDate;
 import java.time.Period;
