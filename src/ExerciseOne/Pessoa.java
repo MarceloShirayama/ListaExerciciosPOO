@@ -57,13 +57,18 @@ public class Pessoa {
     int year = Integer.parseInt(date[2]);
     // date of birth
     LocalDate pdate = LocalDate.of(year, month, day);
+    int monthTestNumber = pdate.getMonthValue();
+    int dayTest = pdate.getDayOfMonth();
+    int yearTest = pdate.getYear();
+    String result2 = String.format("Data: mes: %d, dia: %d, ano: %d", monthTestNumber, dayTest, yearTest);
     // current date
     LocalDate now = LocalDate.now();
     // difference between current date and date of birth
     Period diff = Period.between(pdate, now);
 
-    System.out.printf("\nO %s tem:  %d anos, %d meses e %d dias.\n\n",
+    String result = String.format("\nO %s tem:  %d anos, %d meses e %d dias.\n\n",
         name, diff.getYears(), diff.getMonths(), diff.getDays());
+    System.out.println(result + "\n" + result2);
   }
 
 }
