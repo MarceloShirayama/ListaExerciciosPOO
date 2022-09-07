@@ -1,6 +1,7 @@
 import ExerciseFive.Student;
 import ExerciseFour.BuildingElevator;
 import ExerciseOne.Pessoa;
+import ExerciseSeven.Employee;
 import ExerciseSix.Invoice;
 import ExerciseThree.FuelPump;
 import ExerciseTwo.CheckingAccount;
@@ -65,7 +66,7 @@ public class App {
                 // JOptionPane.INFORMATION_MESSAGE);
                 // System.out.println("=".repeat(80) + "\n");
 
-                // Exercise Five
+                // Exercise Six
                 Invoice invoice1 = new Invoice(
                                 "123",
                                 "Mouse Pad",
@@ -84,6 +85,14 @@ public class App {
                                 3,
                                 0);
                 System.out.println(invoice3.toString());
+                System.out.println("=".repeat(80) + "\n");
+
+                // Exercise Seven
+                Employee employee1 = new Employee(
+                                "Marcelo", "Shirayama", 5000);
+                System.out.println(employee1.toString());
+                employee1.salaryIncrease(10);
+                System.out.println(employee1.toString());
                 System.out.println("=".repeat(80) + "\n");
         }
 
