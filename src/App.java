@@ -1,3 +1,4 @@
+import ExerciseEight.Data;
 import ExerciseFive.Student;
 import ExerciseFour.BuildingElevator;
 import ExerciseOne.Pessoa;
@@ -109,6 +110,39 @@ public class App {
                 System.out.println(employee1.toString());
                 System.out.println(employee1.getSalariesReceived());
                 System.out.println(employee1.getSalariesPaid());
+                System.out.println("=".repeat(80) + "\n");
+
+                // Exercise
+                Data data = new Data("30/04/1970");
+                System.out.println(data.toString());
+                System.out.println("dia: " + data.getDay());
+                System.out.println("mês: " + data.getMonth());
+                System.out.println("ano: " + data.getYear());
+                System.out.println(data.getYear() + " é bissexto: " + data.leapYear());
+                System.out.println("-".repeat(80) + "\n");
+                Data data2 = new Data("06/07/1964");
+                System.out.println(data2.toString());
+                System.out.println("dia: " + data2.getDay());
+                System.out.println("mês: " + data2.getMonth());
+                System.out.println("ano: " + data2.getYear());
+                System.out.println(data2.getYear() + " é bissexto: " + data2.leapYear());
+                System.out.println("-".repeat(80) + "\n");
+                Data data3 = data.clone();
+                data3.setDate("30/04/2000");
+                System.out.println(data3.toString());
+                System.out.println("dia: " + data3.getDay());
+                System.out.println("mês: " + data3.getMonth());
+                System.out.println("ano: " + data3.getYear());
+                System.out.println(data3.getYear() + " é bissexto: " + data3.leapYear());
+                System.out.println("-".repeat(80) + "\n");
+                System.out.println("Diferença entre: " + data + " e " + data2 + " = " + data.compare(data2));
+                System.out.println("Diferença entre: " + data2 + " e " + data + " = " + data2.compare(data));
+                System.out.println("Diferença entre: " + data2 + " e " + data3 + " = " + data2.compare(data3));
+                Data data4 = data3.clone();
+                data4.setDate("20/04/2000");
+                System.out.println("Diferença entre: " + data3 + " e " + data4 + " = " + data3.compare(data4));
+                Data data5 = data4.clone();
+                System.out.println("Diferença entre: " + data5 + " e " + data4 + " = " + data5.compare(data4));
                 System.out.println("=".repeat(80) + "\n");
         }
 
