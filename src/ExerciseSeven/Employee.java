@@ -18,10 +18,23 @@ de cada empregado.
  */
 package ExerciseSeven;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Employee {
   private String firstName;
   private String lastName;
   private double monthlySalary = 0.0;
+  private List<SalaryPaid> salariesPaid = new ArrayList<>();
+  List<Double> salariesReceived = new ArrayList<>();
+
+  public List<SalaryPaid> getSalariesPaid() {
+    return salariesPaid;
+  }
+
+  public List<Double> getSalariesReceived() {
+    return salariesReceived;
+  }
 
   public Employee(String firstName, String lastName, double monthlySalary) {
     this.firstName = firstName;
@@ -55,18 +68,48 @@ public class Employee {
   }
 
   public double annualSalary() {
-    return monthlySalary * 12.0;
+    double annualSalary = 0;
+    if (salariesPaid.size() > 0) {
+      if (this.salariesPaid.size() > 12) {
+        for (int i = 0; i < 12; i++) {
+          salariesReceived.add(this.salariesPaid.get(12 - i).salary);
+        }
+        double sumSalaries = salariesReceived
+            .stream()
+            .reduce(0.0, (subtotal, element) -> subtotal + element);
+        int quantitySalaries = salariesReceived.size();
+
+        annualSalary = sumSalaries / quantitySalaries;
+
+      } else {
+        for (int i = 0; i < salariesPaid.size(); i++) {
+          salariesReceived.add(this.salariesPaid.get(salariesPaid.size() - 1 - i).salary);
+        }
+        double sumSalaries = salariesReceived
+            .stream()
+            .reduce(0.0, (subtotal, element) -> subtotal + element);
+        int quantitySalaries = salariesReceived.size();
+
+        annualSalary = sumSalaries / quantitySalaries;
+      }
+    }
+    return annualSalary;
   }
 
   public void salaryIncrease(double increase) {
     this.monthlySalary = this.monthlySalary * (1 + increase / 100);
   }
 
+  public void salaryReceived(int month, int year) {
+    SalaryPaid salaryReceived = new SalaryPaid(this.monthlySalary, month, year);
+    this.salariesPaid.add(salaryReceived);
+  }
+
   @Override
   public String toString() {
     String employee = String.format(
         "Empregado: %s %s\n\t"
-            + "Salário mensal: R$ %.2f\n\t"
+            + "Salário mensal atual: R$ %.2f\n\t"
             + "Salário anual: R$ %.2f",
         firstName,
         lastName,

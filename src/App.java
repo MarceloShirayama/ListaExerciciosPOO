@@ -91,8 +91,24 @@ public class App {
                 Employee employee1 = new Employee(
                                 "Marcelo", "Shirayama", 5000);
                 System.out.println(employee1.toString());
-                employee1.salaryIncrease(10);
                 System.out.println(employee1.toString());
+                employee1.salaryReceived(12, 2021);
+                employee1.salaryIncrease(10);
+                employee1.salaryReceived(1, 2022);
+                employee1.salaryReceived(2, 2022);
+                employee1.salaryReceived(3, 2022);
+                employee1.salaryReceived(4, 2022);
+                employee1.salaryReceived(5, 2022);
+                employee1.salaryReceived(6, 2022);
+                employee1.salaryReceived(7, 2022);
+                employee1.salaryReceived(8, 2022);
+                employee1.salaryReceived(9, 2022);
+                employee1.salaryReceived(10, 2022);
+                employee1.salaryReceived(11, 2022);
+                employee1.salaryReceived(12, 2022);
+                System.out.println(employee1.toString());
+                System.out.println(employee1.getSalariesReceived());
+                System.out.println(employee1.getSalariesPaid());
                 System.out.println("=".repeat(80) + "\n");
         }
 
