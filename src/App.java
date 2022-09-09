@@ -1,6 +1,7 @@
 import ExerciseEight.Data;
 import ExerciseFive.Student;
 import ExerciseFour.BuildingElevator;
+import ExerciseNine.Flight;
 import ExerciseOne.Pessoa;
 import ExerciseSeven.Employee;
 import ExerciseSix.Invoice;
@@ -143,6 +144,16 @@ public class App {
                 System.out.println("Diferença entre: " + data3 + " e " + data4 + " = " + data3.compare(data4));
                 Data data5 = data4.clone();
                 System.out.println("Diferença entre: " + data5 + " e " + data4 + " = " + data5.compare(data4));
+                System.out.println("=".repeat(80) + "\n");
+
+                Flight flight = new Flight("123", "01/09/2022", "10:15");
+                System.out.println(flight.reserveSeat(0));
+                System.out.println(flight.reserveSeat(1));
+                System.out.println(flight.reserveSeat(10));
+                System.out.println(flight.reserveSeat(10));
+                System.out.println("Próximo assento livre: n." + flight.nextFreeSeat());
+                flight.numberOfAvailableSeats();
+                flight.getFlight();
                 System.out.println("=".repeat(80) + "\n");
         }
 
