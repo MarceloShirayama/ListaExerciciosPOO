@@ -1,4 +1,5 @@
 import ExerciseEight.Data;
+import ExerciseExtra1.ThreadsTests;
 import ExerciseFive.Student;
 import ExerciseFour.BuildingElevator;
 import ExerciseNine.Flight;
@@ -155,6 +156,8 @@ public class App {
                 flight.numberOfAvailableSeats();
                 flight.getFlight();
                 System.out.println("=".repeat(80) + "\n");
+
+                ThreadsTests.execute();
         }
 
 }
